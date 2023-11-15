@@ -1,4 +1,4 @@
-# **Project Title: Deep Learning Image Classifier Application**
+# **Project Title: Deep Learning Image Classifier Application to Recognize Different Species of Flower**
 
 **Short Description:**
 Embark on a comprehensive journey of developing an innovative image classification application using deep learning techniques. This two-part project provides a hands-on experience in implementing a sophisticated image classifier with PyTorch in a Jupyter notebook, followed by the conversion of the trained model into a command-line application. Your efforts will culminate in the creation of two essential Python scripts, 'train.py' and 'predict.py,' each serving a distinct purpose in the training and utilization of the image classifier.
