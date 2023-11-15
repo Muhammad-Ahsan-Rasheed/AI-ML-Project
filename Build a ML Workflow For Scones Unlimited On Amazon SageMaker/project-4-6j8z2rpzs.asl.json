@@ -1,0 +1,49 @@
+{
+  "Comment": "A description of my state machine",
+  "StartAt": "serialize Image Data",
+  "States": {
+    "serialize Image Data": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "OutputPath": "$.Payload",
+      "Parameters": {
+        "FunctionName": "arn:aws:lambda:us-east-1:149510526192:function:serializeImageData:$LATEST",
+        "Payload.$": "$"
+      },
+      "Next": "ImageClassifier"
+    },
+    "ImageClassifier": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "OutputPath": "$.Payload",
+      "Parameters": {
+        "FunctionName": "arn:aws:lambda:us-east-1:149510526192:function:classifier:$LATEST",
+        "Payload.$": "$"
+      },
+      "Next": "InferenceConfidenceFilter"
+    },
+    "InferenceConfidenceFilter": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "OutputPath": "$.Payload",
+      "Parameters": {
+        "FunctionName": "arn:aws:lambda:us-east-1:149510526192:function:confidence-filter:$LATEST",
+        "Payload.$": "$"
+      },
+      "Retry": [
+        {
+          "ErrorEquals": [
+            "Lambda.ServiceException",
+            "Lambda.AWSLambdaException",
+            "Lambda.SdkClientException",
+            "Lambda.TooManyRequestsException"
+          ],
+          "IntervalSeconds": 1,
+          "MaxAttempts": 3,
+          "BackoffRate": 2
+        }
+      ],
+      "End": true
+    }
+  }
+}
