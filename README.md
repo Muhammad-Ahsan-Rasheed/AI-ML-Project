@@ -2,10 +2,14 @@
 These are all the projects I completed under my AI/ML scholarship by AWS. 
 
 **AWS AI/ML Scholarship - Basic + Advanced Cohort**
-**Nanodegree 1: AI Programming with Python**
-**Nanodegree 2: Machine Learning Fundamentals**
 
-Welcome to a series of diverse and challenging machine learning engineering projects, each designed to showcase your skills in various domains. These projects cover a wide range of applications, from image classification and natural language processing to deploying scalable models on cloud platforms. As you progress through these projects, you'll demonstrate your ability to tackle real-world machine learning problems and deploy solutions effectively.
+1- **Nanodegree 1: AI Programming with Python**
+
+2- **Nanodegree 2: Machine Learning Fundamentals**
+
+----
+
+Welcome to a series of diverse and challenging machine learning engineering projects, each designed to showcase skills in various domains. These projects cover a wide range of applications, from image classification and natural language processing to deploying scalable models on cloud platforms. As you progress through these projects, you'll demonstrate your ability to tackle real-world machine learning problems and deploy solutions effectively.
 
 **Project Titles:**
 
